@@ -49,6 +49,11 @@ app.get('/post/:postTitle', function (req, res) {
 	}
 });
 
+app.get('/clear', function (req, res) {
+	post = [];
+	postTitle = [];
+	res.render('homepage', { homeParagraph: homeParagraph, postTitle: postTitle, post: post });
+});
 // Get information from text boxes
 app.post('/', function (req, res) {
 	let postTitles = req.body.postTitle;
